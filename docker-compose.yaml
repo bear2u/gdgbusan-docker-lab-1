@@ -2,8 +2,7 @@ version: '3.3'
 
 services:
   client:
-    build:
-      dockerfile: Dockerfile.dev
+    build:      
       context: ./client
     volumes:
       - ./client:/app
@@ -18,10 +17,9 @@ services:
       - ./server:/app
       - /app/node_modules   
     environment:
-      - PORT=4000
-        
+      - PORT=4000        
     # ports:
-      # - "4000:4000"  
+    #   - "4000:4000"  
   mongodb:
     container_name: mongo
     image: mongo
